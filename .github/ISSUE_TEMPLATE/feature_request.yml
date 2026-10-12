@@ -1,0 +1,30 @@
+name: Feature Request
+description: Suggest an improvement or new capability for Global Reach.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > **Note:** Please ensure your suggestion complies with the Discord Terms of Service and Developer Policy.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Use Case
+      description: What community management or outreach challenge does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe how you would like the feature or workflow to work.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative workarounds or existing Discord features you have considered.
+    validations:
+      required: false

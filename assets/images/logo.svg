@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Global Reach Logo">
+  <defs>
+    <linearGradient id="gr-cyan-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="gr-magenta" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="112" height="112" x="4" y="4" rx="26" fill="#080c1a" stroke="url(#gr-cyan-blue)" stroke-width="3" />
+  <circle cx="60" cy="60" r="34" fill="none" stroke="url(#gr-cyan-blue)" stroke-width="2.5" opacity="0.85" />
+  <ellipse cx="60" cy="60" rx="18" ry="34" fill="none" stroke="url(#gr-cyan-blue)" stroke-width="2" opacity="0.65" />
+  <path d="M26 60 H94" stroke="url(#gr-cyan-blue)" stroke-width="2" opacity="0.65" />
+  <path d="M31 44 H89 M31 76 H89" stroke="url(#gr-magenta)" stroke-width="1.5" opacity="0.55" />
+  <circle cx="60" cy="26" r="4.5" fill="#00f2fe" />
+  <circle cx="89" cy="44" r="4.5" fill="#ec4899" />
+  <circle cx="31" cy="76" r="4.5" fill="#3b82f6" />
+  <circle cx="60" cy="60" r="6" fill="#00f2fe" />
+</svg>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy, Data Retention &amp; Opt-Out Controls — Global Reach</title>
+  <meta name="description" content="Privacy Policy for Global Reach detailing Discord data categories, individual opt-in consent rules, 7-day temporary snapshot retention, and user data deletion boundaries." />
+  <link rel="canonical" href="https://punit-20.github.io/global-reach-public/privacy.html" />
+  <meta property="og:site_name" content="Global Reach" />
+  <meta property="og:title" content="Privacy Policy &amp; Data Retention — Global Reach" />
+  <meta property="og:description" content="Transparent disclosures on Discord data categories, opt-in consent verification, snapshot retention, and user deletion controls." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://punit-20.github.io/global-reach-public/privacy.html" />
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="./index.html">
+        <img src="./assets/images/logo.svg" alt="Global Reach Logo" width="38" height="38" />
+        <span>Global Reach</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./docs/index.html">Documentation</a></li>
+          <li><a href="./docs/features.html">Features</a></li>
+          <li><a href="./docs/installation.html">Installation</a></li>
+          <li><a href="./docs/faq.html">FAQ</a></li>
+          <li><a href="./support.html">Support</a></li>
+          <li><a href="./terms.html">Terms</a></li>
+          <li><a href="./privacy.html" aria-current="page">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="section-header">
+      <span class="badge">Privacy &amp; Data Practices</span>
+      <h1>Privacy Policy</h1>
+      <p>Effective Date: <strong>October 12, 2026</strong> | Data Controller: <strong>Global Reach Team (<code>punit-20</code>)</strong></p>
+    </div>
+
+    <div class="callout">
+      <strong>Pre-Verification Status &amp; Transparency Notice:</strong> Global Reach (Application ID: <code>722756633499009045</code>) is currently in <strong>pre-verification preview</strong> and is not operating as an active public hosted service. Live cloud webhook listeners, in-Discord user opt-in/opt-out buttons, and interactive <code>/campaign</code> slash commands are <strong>not yet deployed</strong>. This Privacy Policy documents the exact Discord data categories, consent rules, retention limits, and deletion boundaries implemented in the Global Reach software.
+    </div>
+
+    <article class="prose">
+      <h2>1. Overview &amp; Current Operational Scope</h2>
+      <p>
+        This Privacy Policy explains what information <strong>Global Reach</strong> (Application ID: <code>722756633499009045</code>, "the Bot" or "the Service") processes and stores when interacting with the official Discord API, as well as the scope and limitations of data retention and user data removal.
+      </p>
+      <ul>
+        <li><strong>Implemented Operator &amp; Application Capabilities:</strong> Official Discord Bot identity verification, server registration, cryptographic interaction signature verification, individual user opt-in and opt-out management, administrator campaign approval verification, channel permission checks, single-dispatch announcement delivery, user data purge utilities, and expired audience snapshot cleanup.</li>
+        <li><strong>Planned / Not Yet Deployed:</strong> Always-on cloud Gateway/webhook listeners, interactive in-Discord self-service opt-in/opt-out buttons, and <code>/campaign</code> slash commands.</li>
+      </ul>
+
+      <h2>2. Information We Collect &amp; Process</h2>
+      <p>When operated with authorized Discord servers, Global Reach processes only the following specific categories of Discord data:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data Category</th>
+              <th>Specific Fields Processed &amp; Stored</th>
+              <th>Purpose of Processing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Discord User Identifiers &amp; Profile Metadata</strong></td>
+              <td>User ID, username, global/display name, server nickname, and automated bot account indicator.</td>
+              <td>To verify user identity during consent or administrative interactions and to automatically exclude automated bot accounts from audiences.</td>
+            </tr>
+            <tr>
+              <td><strong>Server (Guild), Role &amp; Channel Metadata</strong></td>
+              <td>Registered Server ID, server name, server owner ID, role definitions, target channel ID, channel type, and channel permission overrides.</td>
+              <td>To confirm server authorization, evaluate channel permission hierarchies, and ensure announcements are posted only in eligible server text or announcement channels.</td>
+            </tr>
+            <tr>
+              <td><strong>Verified Consented Membership Attributes</strong></td>
+              <td>Server join timestamp, assigned role IDs, and verified individual consent metadata (interaction identifier, consent timestamp, and active/revoked status).</td>
+              <td>To confirm that every non-bot holder of a target notification role has an active, unrevoked individual consent record prior to campaign dispatch.</td>
+            </tr>
+            <tr>
+              <td><strong>Consent Registries, Administrator Approvals &amp; Campaign Audit Logs</strong></td>
+              <td>Registered server IDs, configured opt-in role IDs, individual consent and global opt-out records, replay-protection interaction identifiers, approving administrator User ID, cryptographic campaign digest, approval lifecycle state, published Discord message ID, and delivery timestamp.</td>
+              <td>To enforce opt-out precedence, prevent interaction replay, verify administrator approval integrity, prevent duplicate message dispatch, and maintain an operational audit trail.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <strong>What We Do Not Collect or Store:</strong> Global Reach does not read, monitor, or store user chat message contents, direct messages, file attachments, reactions, or voice activity.
+      </p>
+
+      <h2>3. Purposes of Processing &amp; Strict Individual Consent Rules</h2>
+      <ul>
+        <li><strong>Administrator-Assigned Roles Never Prove Consent:</strong> Holding a Discord server role assigned by an administrator is <strong>never</strong> treated as proof of individual user consent, and unverified caller-supplied identifiers are rejected. Each consent record requires a cryptographically verified, user-initiated Discord interaction matching the user's own account ID, server ID, and opt-in action, protected against replay.</li>
+        <li><strong>Opt-Out Precedence &amp; Fail-Closed Delivery Blocking:</strong> Global opt-outs take strict precedence over role membership and prior consent records. Campaign delivery is automatically blocked if consent is missing, revoked, or inconsistent, or if <strong>any</strong> non-bot member holding the target notification role lacks a verified individual consent record.</li>
+        <li><strong>Verified Administrator Approval:</strong> Campaign approvals derive the acting administrator's identity strictly from a verified Discord interaction, confirm via the Discord API that the human user holds <code>ADMINISTRATOR</code>, <code>MANAGE_GUILD</code>, or Server Owner status, and cryptographically bind the approval to a SHA-256 digest of the campaign payload.</li>
+        <li><strong>Single-Dispatch Channel Delivery:</strong> Approved announcements lock campaign state prior to delivery to prevent duplicate sends, target strictly server text or announcement channels with mentions restricted to the designated opt-in role, and require a confirmed message snowflake ID from Discord.</li>
+      </ul>
+
+      <h2>4. Data Storage, Retention &amp; Deletion Boundaries</h2>
+      <ul>
+        <li><strong>Isolated Storage:</strong> Operational consent registries, administrator approval records, campaign audit logs, and any temporary audience snapshots are stored in an isolated private operator environment using atomic file updates and are strictly excluded from public repositories.</li>
+        <li><strong>Manual Operator Retention Controls (No Automatic Background Daemon):</strong> Data retention and snapshot cleanup utilities run <strong>when invoked by the operator</strong> (or via an operator-configured scheduler); the software does not run an autonomous background deletion daemon on its own. Temporary audience snapshots are subject to a 7-day retention policy via operator snapshot cleanup utilities.</li>
+        <li><strong>What User Data Deletion Erases vs. Retains:</strong> Executing an operator user-deletion action for a Discord User ID atomically:
+          <ol>
+            <li>Records a permanent global opt-out and replaces any server consent record for that user with a minimal revoked tombstone (retained specifically so role assignments cannot re-enroll the user),</li>
+            <li>Revokes any pending campaign approvals created by that user ID, and</li>
+            <li>Removes that user ID from temporary audience snapshots in the operator environment.</li>
+          </ol>
+          <strong>Limitations of Erasure:</strong> Operator user deletion does <strong>not</strong> alter historical append-only campaign delivery audit entries (which record campaign metadata and approving administrator IDs rather than recipient member lists), does not modify external backups, and does not delete announcement messages already posted in Discord channels.
+        </li>
+      </ul>
+
+      <h2>5. Third-Party Services &amp; Data Sharing</h2>
+      <ul>
+        <li><strong>Discord Inc.:</strong> When executed, the Service communicates directly with Discord's official API (<code>discord.com</code>).</li>
+        <li><strong>GitHub Pages:</strong> This public documentation website is hosted statically on GitHub Pages. The website sets no tracking cookies, runs no third-party analytics scripts, and collects no form inputs.</li>
+        <li><strong>No Sale or Brokerage:</strong> We do not sell, rent, license, or share Discord User IDs or community records with third-party advertisers or data brokers.</li>
+      </ul>
+
+      <h2>6. Security Practices</h2>
+      <ul>
+        <li>Official Discord Bot credentials are stored exclusively in private environment configurations, verified against Discord's official bot identity endpoint, and never logged or committed to public repositories.</li>
+        <li>All application logic, operational registries, and private workspaces are kept strictly separate from this public documentation site.</li>
+      </ul>
+
+      <h2>7. Privacy, Opt-Out &amp; Data-Deletion Requests (Pre-Launch Status)</h2>
+      <p>
+        Global Reach is currently in <strong>pre-verification preview</strong> and is not operating as a live public hosted service.
+      </p>
+      <ul>
+        <li><strong>Do Not Post Personal Identifiers Publicly:</strong> Never post your personal Discord User ID, Server ID, email address, or credentials in public <a href="https://github.com/punit-20/global-reach-public/issues">GitHub Issues</a> or <a href="https://github.com/punit-20/global-reach-public/discussions">GitHub Discussions</a>.</li>
+        <li><strong>Dedicated Private Privacy Intake Pending Pre-Launch Provisioning:</strong> A dedicated, monitored private intake channel for end-user privacy, opt-out, and data-deletion requests has <strong>not yet been provisioned</strong> while the project remains unhosted, and no automated response-time SLA is currently in effect. Before Global Reach is deployed to production or submitted for Discord verification, a dedicated private privacy contact route will be published in this section.</li>
+        <li><strong>Server Administrator Assistance:</strong> Where an administrator or operator of a local Global Reach test instance receives a verified opt-out or deletion request inside their managed Discord community, the operator can immediately execute the built-in user opt-out and data-purge controls in their local environment.</li>
+      </ul>
+
+      <h2>8. Policy Updates &amp; Contact Information</h2>
+      <p>
+        We may update this Privacy Policy to reflect changes in application architecture, operational deployment, or Discord verification requirements. Updates will be indicated by revising the Effective Date at the top of this page. This document is provided for operational transparency and does not constitute formal legal advice.
+      </p>
+      <ul>
+        <li><strong>Data Controller / Operator:</strong> Global Reach Team (<code>punit-20</code>)</li>
+        <li><strong>Public Documentation &amp; Non-Sensitive Policy Questions:</strong> <a href="https://github.com/punit-20/global-reach-public/discussions">GitHub Discussions</a> (do not include personal Discord IDs)</li>
+        <li><strong>Private Software Security Vulnerability Disclosures Only:</strong> <a href="https://github.com/punit-20/global-reach-public/security/advisories/new">GitHub Private Security Advisories</a> (reserved for security vulnerabilities and credential leaks; not a general privacy request queue)</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Global Reach</strong> — Community Outreach &amp; Campaign Management for Discord. Maintained by Global Reach Team (<code>punit-20</code>).
+      </div>
+      <ul class="footer-links">
+        <li><a href="./docs/index.html">Docs</a></li>
+        <li><a href="./docs/faq.html">FAQ</a></li>
+        <li><a href="./support.html">Support</a></li>
+        <li><a href="./terms.html">Terms of Service</a></li>
+        <li><a href="./privacy.html">Privacy Policy</a></li>
+        <li><a href="https://github.com/punit-20/global-reach-public">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

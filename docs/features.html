@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Features &amp; Compliance Architecture — Global Reach Docs</title>
+  <meta name="description" content="Explore Global Reach features for Discord server administrators: opt-in role announcements, cryptographic consent verification, administrator approval workflows, and channel permission safeguards." />
+  <link rel="canonical" href="https://punit-20.github.io/global-reach-public/docs/features.html" />
+  <meta property="og:site_name" content="Global Reach" />
+  <meta property="og:title" content="Product Features &amp; Compliance Architecture — Global Reach Docs" />
+  <meta property="og:description" content="How Global Reach coordinates administrator-approved Discord server announcements with verified individual consent and least-privilege permissions." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://punit-20.github.io/global-reach-public/docs/features.html" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo.svg" alt="Global Reach Logo" width="38" height="38" />
+        <span>Global Reach</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./index.html">Documentation</a></li>
+          <li><a href="./features.html" aria-current="page">Features</a></li>
+          <li><a href="./installation.html">Installation</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="section-header">
+      <span class="badge">Product Capabilities</span>
+      <h1>Features &amp; Compliance Architecture</h1>
+      <p>How Global Reach helps Discord server administrators coordinate opt-in community announcements while respecting user privacy and platform rules.</p>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Pre-Verification Release Status:</strong> Global Reach (Application ID: <code>722756633499009045</code>) is currently in <strong>pre-verification preview</strong>. Core compliance, consent verification, permission evaluation, and campaign approval workflows are implemented and verified in our application engine, while hosted cloud listeners, interactive in-Discord opt-in buttons, and <code>/campaign</code> slash commands are scheduled for rollout following Discord verification.
+    </div>
+
+    <article class="prose">
+      <h2>1. Core Product Capabilities</h2>
+      <p>
+        Global Reach is built for Discord community managers, server owners, and partner coordinators who need a structured way to publish announcements in designated server channels without spamming <code>@everyone</code> or sending unsolicited Direct Messages.
+      </p>
+      <ul>
+        <li>
+          <strong>Channel-Only Announcement Delivery:</strong>
+          Campaigns are published strictly to authorized server text or announcement channels. Global Reach does not send unsolicited bulk Direct Messages (DMs).
+        </li>
+        <li>
+          <strong>Explicit Individual Opt-In Consent:</strong>
+          Holding a server role assigned by an administrator is never treated as proof of individual consent. Every recipient in an announcement audience must have an active, unrevoked consent record created from a verified user-initiated Discord interaction, and global opt-outs always take precedence.
+        </li>
+        <li>
+          <strong>Administrator Campaign Approval &amp; Tamper Protection:</strong>
+          Every campaign requires explicit authorization from a verified server administrator or owner. Approvals are cryptographically bound to the exact campaign content, target channel, sponsor attribution, and opt-in role so campaign parameters cannot be altered after approval.
+        </li>
+        <li>
+          <strong>Single-Dispatch Safeguards:</strong>
+          Approved campaigns are locked prior to delivery and confirmed against Discord's message creation response, preventing accidental duplicate announcements in community channels.
+        </li>
+      </ul>
+
+      <h2>2. Permission &amp; Platform Safety Controls</h2>
+      <p>
+        Global Reach follows Discord's official API standards and least-privilege security practices:
+      </p>
+      <ul>
+        <li>
+          <strong>Official Discord Bot Authentication:</strong>
+          Operates exclusively as a registered Discord Bot application using official OAuth2 permissions. Personal user-account automation ("self-botting") and unauthorized member harvesting are strictly prohibited.
+        </li>
+        <li>
+          <strong>Full Channel Permission Hierarchy Checks:</strong>
+          Before posting any announcement, Global Reach evaluates server base permissions, <code>@everyone</code> overrides, role-specific overrides, and member-specific channel overrides to confirm that <code>View Channels</code>, <code>Send Messages</code>, and <code>Embed Links</code> are granted.
+        </li>
+        <li>
+          <strong>Automated Bot Filtering &amp;Scoped Mentions:</strong>
+          Automated bot accounts are automatically excluded from audience verification, and announcement mentions are restricted strictly to the designated opt-in notification role.
+        </li>
+        <li>
+          <strong>Rate-Limit Compliance:</strong>
+          All Discord communication honors official rate-limit headers and retry intervals to protect server health and platform stability.
+        </li>
+      </ul>
+
+      <h2>3. Privacy, Opt-Out &amp; Data Retention Controls</h2>
+      <ul>
+        <li>
+          <strong>No Message Content Monitoring:</strong>
+          Global Reach never reads, logs, or stores user chat messages, attachments, or voice activity.
+        </li>
+        <li>
+          <strong>Immediate Opt-Out Precedence:</strong>
+          Users who opt out are permanently excluded from future audience checks, even if they still hold a notification role on a server.
+        </li>
+        <li>
+          <strong>Data Minimization &amp; Removal:</strong>
+          Operator data-management tools support full removal of a user's consent records, pending approvals, and temporary audience snapshots, alongside routine cleanup of expired snapshots (see our <a href="../privacy.html">Privacy Policy</a> for complete retention and deletion details).
+        </li>
+      </ul>
+
+      <h2>4. Feature Availability Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Current Status</th>
+              <th>Overview</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Official Bot Identity &amp; OAuth2 Authorization</strong></td>
+              <td><strong>Available (Preview)</strong></td>
+              <td>Server administrators can review requested permissions and authorize the official application (ID: <code>722756633499009045</code>) in test or target servers.</td>
+            </tr>
+            <tr>
+              <td><strong>Cryptographic Interaction Verification &amp; Consent Engine</strong></td>
+              <td><strong>Implemented Core Capability</strong></td>
+              <td>Validates Ed25519 request signatures, prevents interaction replay, and enforces individual opt-in and opt-out rules.</td>
+            </tr>
+            <tr>
+              <td><strong>Administrator Approval &amp; Channel Permission Engine</strong></td>
+              <td><strong>Implemented Core Capability</strong></td>
+              <td>Verifies administrator permissions, locks campaign parameters against tampering, and validates channel overrides before dispatch.</td>
+            </tr>
+            <tr>
+              <td><strong>Operator Privacy &amp; Snapshot Cleanup Controls</strong></td>
+              <td><strong>Implemented Core Capability</strong></td>
+              <td>Provides operator utilities to record permanent opt-outs, purge user records across local stores, and remove expired audience snapshots.</td>
+            </tr>
+            <tr>
+              <td><strong>Hosted Interaction Endpoint &amp; In-Discord Buttons</strong></td>
+              <td><strong>Planned (Post-Verification)</strong></td>
+              <td>Always-on cloud webhook listener for one-click in-Discord opt-in/opt-out buttons and interactive <code>/campaign</code> slash commands.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Global Reach</strong> — Community Outreach &amp; Campaign Management for Discord. Maintained by Global Reach Team (<code>punit-20</code>).
+      </div>
+      <ul class="footer-links">
+        <li><a href="./index.html">Docs</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
+        <li><a href="../support.html">Support</a></li>
+        <li><a href="../terms.html">Terms of Service</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
+        <li><a href="https://github.com/punit-20/global-reach-public">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

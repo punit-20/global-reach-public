@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support, Troubleshooting &amp; Security Reporting — Global Reach</title>
+  <meta name="description" content="Support center for Global Reach: troubleshoot Discord bot permissions, submit public bug reports, review privacy guidance, and report security vulnerabilities privately." />
+  <link rel="canonical" href="https://punit-20.github.io/global-reach-public/support.html" />
+  <meta property="og:site_name" content="Global Reach" />
+  <meta property="og:title" content="Support &amp; Troubleshooting — Global Reach" />
+  <meta property="og:description" content="Get help with Discord bot permissions, server setup, bug reporting, and private vulnerability disclosure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://punit-20.github.io/global-reach-public/support.html" />
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="./index.html">
+        <img src="./assets/images/logo.svg" alt="Global Reach Logo" width="38" height="38" />
+        <span>Global Reach</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./docs/index.html">Documentation</a></li>
+          <li><a href="./docs/features.html">Features</a></li>
+          <li><a href="./docs/installation.html">Installation</a></li>
+          <li><a href="./docs/faq.html">FAQ</a></li>
+          <li><a href="./support.html" aria-current="page">Support</a></li>
+          <li><a href="./terms.html">Terms</a></li>
+          <li><a href="./privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="section-header">
+      <span class="badge">Community &amp; Technical Support</span>
+      <h1>Support Center</h1>
+      <p>Need help authorizing Global Reach, reporting a bug, or reviewing privacy guidance? Start below.</p>
+    </div>
+
+    <div class="callout callout-danger">
+      <strong>Security &amp; Privacy Warning — Never Share Secrets or Personal IDs Publicly:</strong> Never paste Discord application tokens, personal account credentials, configuration secrets, HTTP <code>Authorization</code> headers, session cookies, personal Discord User IDs, Server IDs, or community member lists into public GitHub Issues, Discussions, or screenshots.
+    </div>
+
+    <section class="section" aria-labelledby="channels-heading">
+      <h2 id="channels-heading">Official Support &amp; Reporting Channels</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Public Bug Reports (Issues)</h3>
+          <p>Found a reproducible software defect or broken documentation link? Open a structured bug ticket on GitHub Issues (never include personal Discord User IDs, Server IDs, or privacy requests).</p>
+          <p style="margin-top: 1rem;">
+            <a class="btn btn-secondary" href="https://github.com/punit-20/global-reach-public/issues/new?template=bug_report.yml">Open a Bug Issue</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>Questions &amp; Features (Discussions)</h3>
+          <p>Have a general product question, campaign workflow idea, or feature proposal? Join the community conversation on GitHub Discussions.</p>
+          <p style="margin-top: 1rem;">
+            <a class="btn btn-secondary" href="https://github.com/punit-20/global-reach-public/discussions">Visit Discussions</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>Private Security Vulnerability Reporting</h3>
+          <p>Discovered a software security vulnerability or credential exposure? Submit a confidential security advisory (reserved strictly for security vulnerabilities; see <a href="./privacy.html">Privacy Policy</a> for data-deletion scope).</p>
+          <p style="margin-top: 1rem;">
+            <a class="btn btn-secondary" href="https://github.com/punit-20/global-reach-public/security/advisories/new">Report Vulnerability</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="troubleshooting-heading">
+      <div class="prose">
+        <h2 id="troubleshooting-heading">Common Troubleshooting Steps</h2>
+
+        <h3>1. Bot Authorization &amp; Server Access Errors</h3>
+        <p>
+          <strong>Cause:</strong> The account attempting to invite Global Reach does not hold <strong>Manage Server</strong> (<code>MANAGE_GUILD</code>) or <strong>Administrator</strong> permissions on the target Discord server, or moderator Two-Factor Authentication (2FA) is required by the server.<br />
+          <strong>Fix:</strong> Verify that your Discord account has administrative permissions on the server and 2FA enabled before launching the OAuth2 authorization flow.
+        </p>
+
+        <h3>2. Missing Channel Access or Permission Denials</h3>
+        <p>
+          <strong>Cause:</strong> Channel-specific permission overrides on the target announcement channel deny <code>View Channels</code>, <code>Send Messages</code>, or <code>Embed Links</code> for the bot or its assigned role.<br />
+          <strong>Fix:</strong> Ensure Global Reach (Application ID: <code>722756633499009045</code>) is granted <code>View Channels</code>, <code>Send Messages</code>, and <code>Embed Links</code> in the target announcement channel, and that the <strong>Server Members Intent</strong> is enabled in the Discord Developer Portal when role-holder consent verification is used.
+        </p>
+
+        <h3>3. Campaign Blocked by Audience Consent Verification</h3>
+        <p>
+          <strong>Cause:</strong> One or more non-bot members holding the target notification role do not have an active individual opt-in consent record, or have previously opted out.<br />
+          <strong>Fix:</strong> Global Reach fails closed whenever consent is incomplete. Ensure that all members assigned to the target notification role have completed individual opt-in verification and remove any non-consented role assignments before retrying.
+        </p>
+
+        <h2>Maintainer &amp; Pre-Launch Privacy Notice</h2>
+        <ul>
+          <li><strong>Maintainer:</strong> Global Reach Team (<code>punit-20</code>)</li>
+          <li><strong>Public Bug Tracker:</strong> <a href="https://github.com/punit-20/global-reach-public/issues">github.com/punit-20/global-reach-public/issues</a> (for non-sensitive software/documentation bugs only; never post personal Discord IDs)</li>
+          <li><strong>Private Security Vulnerability Channel:</strong> <a href="https://github.com/punit-20/global-reach-public/security/advisories/new">GitHub Private Security Advisories</a></li>
+          <li><strong>Privacy &amp; Data-Deletion Intake Status:</strong> Because Global Reach is currently in pre-verification preview and not operating as a live public hosted service, a dedicated monitored private privacy intake channel is pending pre-launch provisioning (see Section 7 of our <a href="./privacy.html">Privacy Policy</a>).</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Global Reach</strong> — Community Outreach &amp; Campaign Management for Discord. Maintained by Global Reach Team (<code>punit-20</code>).
+      </div>
+      <ul class="footer-links">
+        <li><a href="./docs/index.html">Docs</a></li>
+        <li><a href="./docs/faq.html">FAQ</a></li>
+        <li><a href="./support.html">Support</a></li>
+        <li><a href="./terms.html">Terms of Service</a></li>
+        <li><a href="./privacy.html">Privacy Policy</a></li>
+        <li><a href="https://github.com/punit-20/global-reach-public">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

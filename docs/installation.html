@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discord Bot Installation, OAuth2 Scopes &amp; Permissions — Global Reach Docs</title>
+  <meta name="description" content="Step-by-step installation guide for Global Reach: authorize OAuth2 scopes, configure Discord channel permissions, and review required intents." />
+  <link rel="canonical" href="https://punit-20.github.io/global-reach-public/docs/installation.html" />
+  <meta property="og:site_name" content="Global Reach" />
+  <meta property="og:title" content="Installation &amp; Permissions Guide — Global Reach Docs" />
+  <meta property="og:description" content="How to authorize Global Reach on a Discord server and configure required channel permissions." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://punit-20.github.io/global-reach-public/docs/installation.html" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo.svg" alt="Global Reach Logo" width="38" height="38" />
+        <span>Global Reach</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./index.html">Documentation</a></li>
+          <li><a href="./features.html">Features</a></li>
+          <li><a href="./installation.html" aria-current="page">Installation</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="section-header">
+      <span class="badge">Setup &amp; Permissions</span>
+      <h1>Installation Guide</h1>
+      <p>Follow these steps to add Global Reach (Application ID: <code>722756633499009045</code>) to your Discord server and verify channel permissions.</p>
+    </div>
+
+    <article class="prose">
+      <h2>1. Prerequisites</h2>
+      <ul>
+        <li>A Discord account with <strong>Manage Server</strong> (<code>MANAGE_GUILD</code>) or <strong>Administrator</strong> permissions on the target server.</li>
+        <li>Two-Factor Authentication (2FA) enabled on your Discord account if your server enforces moderator 2FA.</li>
+      </ul>
+
+      <h2>2. Invite Global Reach via OAuth2</h2>
+      <p>Click the official installation button below to launch Discord's authorization dialog:</p>
+      <p>
+        <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=722756633499009045&amp;permissions=274877910016&amp;scope=bot%20applications.commands" rel="noopener noreferrer">
+          Authorize Global Reach on Discord
+        </a>
+      </p>
+
+      <h2>3. Required Permissions &amp; Least-Privilege Scopes</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Scope / Permission</th>
+              <th>Purpose in Global Reach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>bot</code> &amp; <code>applications.commands</code></td>
+              <td>Authorizes the official Discord bot user and reserves slash-command registration scope for planned interactive commands.</td>
+            </tr>
+            <tr>
+              <td><code>View Channels</code> (<code>1024</code>)</td>
+              <td>Required to verify target announcement channel visibility and evaluate channel permission overrides.</td>
+            </tr>
+            <tr>
+              <td><code>Send Messages</code> (<code>2048</code>)</td>
+              <td>Required to post administrator-approved announcements in designated server text or announcement channels.</td>
+            </tr>
+            <tr>
+              <td><code>Embed Links</code> (<code>16384</code>)</td>
+              <td>Required to render structured announcement embeds with clear sponsor attribution.</td>
+            </tr>
+            <tr>
+              <td><code>Read Message History</code> (<code>65536</code>)</td>
+              <td>Included in the default OAuth2 install integer (<code>274877910016</code>) for standard channel compatibility; Global Reach never reads or stores user chat messages.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Privileged Gateway Intents &amp; Least Privilege</h2>
+      <p>
+        Global Reach uses standard unprivileged Discord Bot permissions for identity and server metadata verification. The privileged <strong>Server Members Intent</strong> (<code>GUILD_MEMBERS</code>) is required only when verifying that current holders of an opt-in notification role have active individual consent records prior to announcement dispatch.
+      </p>
+
+      <h2>5. Pre-Verification Status &amp; Troubleshooting</h2>
+      <p>
+        Global Reach is currently in <strong>pre-verification preview</strong>: authorizing the application via OAuth2 adds the bot to your server, while live hosted interactive slash commands (<code>/campaign</code>) and in-Discord opt-in buttons are scheduled for post-verification deployment. If channel verification fails with a permission error, ensure channel overrides do not deny <code>View Channels</code> or <code>Send Messages</code> for the bot. Visit the <a href="../support.html">Support Center</a> for additional guidance.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Global Reach</strong> — Community Outreach &amp; Campaign Management for Discord. Maintained by Global Reach Team (<code>punit-20</code>).
+      </div>
+      <ul class="footer-links">
+        <li><a href="./index.html">Docs</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
+        <li><a href="../support.html">Support</a></li>
+        <li><a href="../terms.html">Terms of Service</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
+        <li><a href="https://github.com/punit-20/global-reach-public">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

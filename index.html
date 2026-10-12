@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Reach — Consent-Based Discord Campaign Management &amp; Community Outreach</title>
+  <meta name="description" content="Global Reach is a consent-based Discord campaign management and community announcement utility for administrator-approved server announcements and opt-in roles." />
+  <link rel="canonical" href="https://punit-20.github.io/global-reach-public/" />
+  <meta property="og:site_name" content="Global Reach" />
+  <meta property="og:title" content="Global Reach — Consent-Based Discord Campaign Management &amp; Outreach" />
+  <meta property="og:description" content="Documentation and pre-verification portal for Global Reach, a consent-based Discord announcement and campaign management utility." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://punit-20.github.io/global-reach-public/" />
+  <meta property="og:image" content="https://punit-20.github.io/global-reach-public/assets/images/banner.svg" />
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="./index.html">
+        <img src="./assets/images/logo.svg" alt="Global Reach Logo" width="38" height="38" />
+        <span>Global Reach</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html" aria-current="page">Home</a></li>
+          <li><a href="./docs/index.html">Documentation</a></li>
+          <li><a href="./docs/features.html">Features</a></li>
+          <li><a href="./docs/installation.html">Installation</a></li>
+          <li><a href="./docs/faq.html">FAQ</a></li>
+          <li><a href="./support.html">Support</a></li>
+          <li><a href="./terms.html">Terms</a></li>
+          <li><a href="./privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <span class="badge">Pre-Verification Development Preview</span>
+        <h1 id="hero-heading">
+          Structured Outreach &amp; <span class="gradient-text">Campaign Management</span> for Discord
+        </h1>
+        <p class="lead">
+          Global Reach helps Discord server administrators coordinate opt-in community announcements with verified individual user consent, administrator approval safeguards, and least-privilege channel permissions.
+        </p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=722756633499009045&amp;permissions=274877910016&amp;scope=bot%20applications.commands" rel="noopener noreferrer">
+            Add to Discord (Preview)
+          </a>
+          <a class="btn btn-secondary" href="./docs/installation.html">
+            Installation Guide
+          </a>
+          <a class="btn btn-secondary" href="./docs/features.html">
+            Explore Features
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="./assets/images/banner.svg" alt="Illustration of interconnected community nodes across the Global Reach platform" width="800" height="320" />
+      </div>
+    </section>
+
+    <div class="callout callout-warning">
+      <strong>Current Release Status:</strong> Global Reach (Application ID: <code>722756633499009045</code>) is currently in <strong>pre-verification preview</strong> and is not yet operating as an always-on public hosted service. Core consent verification, administrator campaign approval, permission evaluation, and data-deletion capabilities are implemented and tested, while live in-Discord opt-in buttons and <code>/campaign</code> slash commands are planned for post-verification deployment.
+    </div>
+
+    <section class="section" aria-labelledby="features-heading">
+      <div class="section-header">
+        <h2 id="features-heading">Core Capabilities &amp; Safeguards</h2>
+        <p>Built from the ground up for transparent, permission-respecting Discord community communication.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Verified Individual Consent</h3>
+          <p>Administrator-assigned roles alone are never treated as consent. Global Reach requires verified, user-initiated opt-in records and enforces strict opt-out precedence before any campaign can be delivered.</p>
+        </article>
+        <article class="card">
+          <h3>Administrator Approval &amp; Integrity</h3>
+          <p>Every announcement requires explicit approval from a verified server administrator or owner, cryptographically locking the campaign text, target channel, and sponsor attribution.</p>
+        </article>
+        <article class="card">
+          <h3>Channel-Only Announcements</h3>
+          <p>Announcements are posted strictly to designated server text or announcement channels with scoped role mentions—never through unsolicited Direct Messages.</p>
+        </article>
+        <article class="card">
+          <h3>Least-Privilege Permissions</h3>
+          <p>Evaluates server roles, <code>@everyone</code> settings, and channel-specific overrides to confirm <code>View Channels</code>, <code>Send Messages</code>, and <code>Embed Links</code> before dispatch.</p>
+        </article>
+        <article class="card">
+          <h3>Privacy &amp; Data Minimization</h3>
+          <p>Global Reach never reads or stores chat message history, file attachments, or voice activity, and provides operator controls to honor opt-outs and purge user records.</p>
+        </article>
+        <article class="card">
+          <h3>Planned Interactive Controls</h3>
+          <p>Hosted webhook listeners for in-Discord opt-in/opt-out buttons and interactive <code>/campaign</code> slash commands are on the roadmap following Discord verification.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-it-works-heading">
+      <div class="section-header">
+        <h2 id="how-it-works-heading">How Global Reach Works</h2>
+        <p>A four-step compliance workflow designed to protect community trust.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>1. Server Authorization</h3>
+          <p>A server administrator authorizes Global Reach via Discord OAuth2 and designates the target server and announcement channel.</p>
+        </article>
+        <article class="card">
+          <h3>2. Individual Opt-In Verification</h3>
+          <p>Community members explicitly opt in to receive notifications. Automated bot accounts and opted-out users are automatically excluded.</p>
+        </article>
+        <article class="card">
+          <h3>3. Administrator Campaign Review</h3>
+          <p>A verified server administrator reviews and approves the exact campaign message, sponsor attribution, target channel, and notification role.</p>
+        </article>
+        <article class="card">
+          <h3>4. Confirmed Channel Delivery</h3>
+          <p>Global Reach verifies channel permissions and audience consent, dispatches the announcement once, and records an immutable delivery audit entry.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="install-heading">
+      <div class="section-header">
+        <h2 id="install-heading">Authorization &amp; Setup</h2>
+        <p>Steps to authorize the application in your test or target Discord server.</p>
+      </div>
+      <div class="prose">
+        <ol>
+          <li>Ensure you have the <strong>Manage Server</strong> (<code>MANAGE_GUILD</code>) or <strong>Administrator</strong> permission on your target Discord server.</li>
+          <li>Open the <a href="https://discord.com/oauth2/authorize?client_id=722756633499009045&amp;permissions=274877910016&amp;scope=bot%20applications.commands" rel="noopener noreferrer">Discord Bot Authorization Link</a>.</li>
+          <li>Select your server from the dropdown menu and review the requested permissions (View Channels, Send Messages, Embed Links).</li>
+          <li>See the <a href="./docs/installation.html">Installation Guide</a> for permission details and pre-verification scope.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="support-heading">
+      <div class="section-header">
+        <h2 id="support-heading">Support, Legal &amp; Security</h2>
+        <p>Resources for public bug reporting, policy disclosures, and private security vulnerability reporting.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Public Bug Reports &amp; Discussions</h3>
+          <p>Report reproducible documentation or software issues via <a href="https://github.com/punit-20/global-reach-public/issues">GitHub Issues</a> or discuss features in <a href="https://github.com/punit-20/global-reach-public/discussions">GitHub Discussions</a>. Never post personal Discord IDs or tokens publicly.</p>
+        </article>
+        <article class="card">
+          <h3>Terms, Privacy &amp; Data Practices</h3>
+          <p>Review our <a href="./terms.html">Terms of Service</a> and <a href="./privacy.html">Privacy Policy</a> for transparent disclosures on data handling, retention rules, and pre-launch privacy contact status.</p>
+        </article>
+        <article class="card">
+          <h3>Private Security Vulnerability Reporting</h3>
+          <p>Report software security vulnerabilities or credential leaks privately via <a href="https://github.com/punit-20/global-reach-public/security/advisories/new">GitHub Security Advisories</a> (reserved for security vulnerabilities; see <a href="./privacy.html">Privacy Policy</a> for data-request guidance).</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Global Reach</strong> — Community Outreach &amp; Campaign Management for Discord. Maintained by Global Reach Team (<code>punit-20</code>).
+      </div>
+      <ul class="footer-links">
+        <li><a href="./docs/index.html">Docs</a></li>
+        <li><a href="./docs/faq.html">FAQ</a></li>
+        <li><a href="./support.html">Support</a></li>
+        <li><a href="./terms.html">Terms of Service</a></li>
+        <li><a href="./privacy.html">Privacy Policy</a></li>
+        <li><a href="https://github.com/punit-20/global-reach-public">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

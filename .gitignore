@@ -1,0 +1,13 @@
+# Never allow secrets, JSON data dumps, private scripts, or archives in the public repository
+*.env
+*.env.*
+*.json
+*.jsonl
+*.py
+*.js
+*.zip
+*.log
+__pycache__/
+node_modules/
+.DS_Store
+Thumbs.db
